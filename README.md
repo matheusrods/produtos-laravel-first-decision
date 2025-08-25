@@ -47,6 +47,7 @@ SESSION_DRIVER=database
 ---
 
 ### 3. Suba os containers
+Entre na pasta `/docker` e rode o comando:
 ```bash
 docker-compose up -d --build
 ```
@@ -140,6 +141,7 @@ A API está documentada com **Swagger UI** via `l5-swagger`.
 ## 🔧 Comandos úteis
 - Subir os containers:
   ```bash
+  cd docker
   docker-compose up -d
   ```
 - Derrubar os containers:
