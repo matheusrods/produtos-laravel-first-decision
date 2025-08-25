@@ -165,3 +165,15 @@ A API está documentada com **Swagger UI** via `l5-swagger`.
    - `http://localhost`
    - `http://localhost:4200`
    - `http://localhost/api/documentation`
+
+   ---
+
+## 🖼️ Demonstração do Sistema
+
+### 🔑 Tela de Login
+![Tela de Login](docs/imagens/login.png)
+
+### 📦 Tela de Produtos
+![Tela de Produtos](docs/imagens/products.png)
+
+---
