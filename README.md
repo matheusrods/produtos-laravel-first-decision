@@ -11,7 +11,7 @@ Antes de iniciar, certifique-se de ter instalado:
 
 ### 1. Clone o repositório
 ```bash
-git clone https://seu-repositorio.git
+git clone https://github.com/matheusrods/produtos-laravel-first-decision.git
 cd seu-projeto
 ```
 
