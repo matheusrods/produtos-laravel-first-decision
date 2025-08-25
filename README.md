@@ -1,4 +1,4 @@
-# 📌 README - Ambiente do Projeto (Laravel + Angular)
+# 📌 README - Ambiente do Projeto (Laravel + Angular + Material Design)
 
 ## 🚀 Requisitos
 Antes de iniciar, certifique-se de ter instalado:
@@ -55,7 +55,7 @@ Isso irá criar:
 - **php** → rodando Laravel (`php-fpm`)
 - **nginx** → servidor web para servir o Laravel
 - **db** → MySQL
-- **angular** → servidor frontend (com Material Design)
+- **angular** → servidor frontend (**Angular + Angular Material Design**)
 
 ---
 
@@ -89,6 +89,8 @@ npm install && ng serve --host 0.0.0.0 --port 4200 --poll 2000
 
 Ou seja, você não precisa rodar manualmente `npm install` ou `npm run build`.  
 O projeto já estará acessível em [http://localhost:4200](http://localhost:4200).
+
+> 🖌️ O frontend já vem configurado com **Angular Material Design**, utilizando seus componentes (botões, formulários, tabelas, etc.) para a interface.
 
 ---
 
@@ -129,7 +131,7 @@ A API está documentada com **Swagger UI** via `l5-swagger`.
 ## 📂 Estrutura do projeto
 ```
 /backend     -> Código Laravel (PHP)
-/frontend    -> Código Angular (Material Design)
+/frontend    -> Código Angular com Material Design
 /docker      -> Configurações do Docker
 ```
 
