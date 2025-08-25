@@ -1,0 +1,47 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.products-container {
+  padding: 20px;
+
+  .filters {
+    display: flex;
+    gap: 15px;
+    margin: 15px 0;
+    align-items: flex-end;
+
+    mat-form-field {
+      width: 180px;
+    }
+
+    .filter-button {
+      display: flex;
+      align-items: flex-end; // força alinhamento pela base
+      height: 56px;          // mesma altura dos mat-form-field
+
+      button {
+        height: 56px;        // botão da mesma altura
+      }
+    }
+  }
+}
+
+.no-data {
+  text-align: center;
+  padding: 30px;
+  color: #777;
+  font-size: 16px;
+
+  mat-icon {
+    vertical-align: middle;
+    margin-right: 8px;
+    color: #999;
+  }
+}
+
+

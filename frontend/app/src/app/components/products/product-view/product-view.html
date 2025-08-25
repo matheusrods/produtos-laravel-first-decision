@@ -1,0 +1,15 @@
+<mat-card *ngIf="product">
+  <mat-card-title>Detalhes do Produto</mat-card-title>
+  <mat-card-content>
+    <p><strong>ID:</strong> {{ product.id }}</p>
+    <p><strong>Nome:</strong> {{ product.name }}</p>
+    <p><strong>Descrição:</strong> {{ product.description || '—' }}</p>
+    <p><strong>Preço:</strong> R$ {{ product.price }}</p>
+    <p><strong>Estoque:</strong> {{ product.stock }}</p>
+    <p><strong>Criado em:</strong> {{ product.created_at | date:'short' }}</p>
+    <p><strong>Atualizado em:</strong> {{ product.updated_at | date:'short' }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="voltar()">Voltar</button>
+  </mat-card-actions>
+</mat-card>

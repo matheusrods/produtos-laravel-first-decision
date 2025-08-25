@@ -1,0 +1,30 @@
+/* Fundo cinza da tela inteira */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5; // 👈 cinza claro no fundo
+
+  mat-card {
+    width: 350px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  mat-card-title {
+    margin-bottom: 20px; // 👈 espaço entre "Login" e o campo Email
+    display: block;      // garante que o título ocupe a linha inteira
+    text-align: center;  // centraliza o título
+    font-weight: 600;
+  }
+
+  .full-width {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  button {
+    margin-top: 10px;
+  }
+}

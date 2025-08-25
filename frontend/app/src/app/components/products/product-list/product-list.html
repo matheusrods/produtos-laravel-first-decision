@@ -1,0 +1,89 @@
+<mat-toolbar color="primary">
+  <span>Lista de Produtos</span>
+  <span class="spacer"></span>
+  <button mat-raised-button color="accent" (click)="novoProduto()">
+    <mat-icon>add</mat-icon> Novo Produto
+  </button>
+  <button mat-raised-button color="warn" class="ml-10" (click)="logout()">
+    <mat-icon>logout</mat-icon> Sair
+  </button>
+</mat-toolbar>
+
+<div class="products-container">
+   <!-- filtros todos juntos -->
+  <div class="filters">
+    <mat-form-field appearance="outline">
+      <mat-label>Filtrar por nome</mat-label>
+      <input matInput [(ngModel)]="textFilter" (keyup)="applyTextFilter()" placeholder="Digite para filtrar">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Preço Mínimo</mat-label>
+      <input matInput type="number" [(ngModel)]="minPrice" (change)="applyAdvancedFilters()">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Preço Máximo</mat-label>
+      <input matInput type="number" [(ngModel)]="maxPrice" (change)="applyAdvancedFilters()">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Estoque Mínimo</mat-label>
+      <input matInput type="number" [(ngModel)]="minStock" (change)="applyAdvancedFilters()">
+    </mat-form-field>
+  </div>
+
+  <!-- tabela só aparece se houver dados -->
+  <table *ngIf="dataSource.data.length > 0" mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+    <!-- ID -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+      <td mat-cell *matCellDef="let element">{{element.id}}</td>
+    </ng-container>
+
+    <!-- Nome -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Nome</th>
+      <td mat-cell *matCellDef="let element">{{element.name}}</td>
+    </ng-container>
+
+    <!-- Preço -->
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Preço</th>
+      <td mat-cell *matCellDef="let element">R$ {{element.price}}</td>
+    </ng-container>
+
+    <!-- Estoque -->
+    <ng-container matColumnDef="stock">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Estoque</th>
+      <td mat-cell *matCellDef="let element">{{element.stock}}</td>
+    </ng-container>
+
+    <!-- Ações -->
+    <ng-container matColumnDef="acoes">
+      <th mat-header-cell *matHeaderCellDef>Ações</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="accent" (click)="visualizar(element)">
+          <mat-icon>visibility</mat-icon>
+        </button>
+        <button mat-icon-button color="primary" (click)="editar(element)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deletar(element)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <div *ngIf="dataSource.data.length === 0" class="no-data">
+    <mat-icon>info</mat-icon>
+    Nenhum produto encontrado.
+  </div>
+
+  <mat-paginator [pageSize]="5"></mat-paginator>
+</div>

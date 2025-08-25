@@ -1,0 +1,20 @@
+mat-card {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.snackbar-success {
+  background: #4caf50; // verde
+  color: #fff;
+}
+
+.snackbar-error {
+  background: #f44336; // vermelho
+  color: #fff;
+}

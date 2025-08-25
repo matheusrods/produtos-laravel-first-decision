@@ -1,0 +1,44 @@
+<mat-card>
+  <mat-card-title>{{ id ? 'Editar Produto' : 'Novo Produto' }}</mat-card-title>
+  <mat-card-content>
+    <form (ngSubmit)="onSubmit()">
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput [(ngModel)]="name" name="name" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Descrição</mat-label>
+        <textarea matInput [(ngModel)]="description" name="description"></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Preço*</mat-label>
+        <input 
+          matInput
+          [(ngModel)]="price"
+          name="price"
+          mask="separator.2"
+          thousandSeparator="."
+          decimalMarker=","
+          prefix="R$ "
+          [dropSpecialCharacters]="false"
+          required
+        >
+      </mat-form-field>
+
+
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Estoque</mat-label>
+        <input matInput type="number" [(ngModel)]="stock" name="stock" required />
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">
+        {{ id ? 'Atualizar' : 'Criar' }}
+      </button>
+      <button mat-raised-button color="primary" (click)="voltar()">Cancelar</button>
+    </form>
+  </mat-card-content>
+</mat-card>
